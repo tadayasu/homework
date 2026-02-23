@@ -13,7 +13,11 @@
       "Bash(python3:*)",
       "Bash(git add src/app/api/debug/route.ts && git commit -m \"Add temporary debug endpoint\" && git push 2>&1)",
       "Bash(git push:*)",
-      "Bash(rm -rf /Users/yotsu/claude/homework/src/app/api/debug && git add -A && git commit -m \"Remove temporary debug endpoint\" && git push 2>&1)"
+      "Bash(rm -rf /Users/yotsu/claude/homework/src/app/api/debug && git add -A && git commit -m \"Remove temporary debug endpoint\" && git push 2>&1)",
+      "Bash(git add src/app/api/debug/route.ts && git commit -m \"Add Sheets diagnostic endpoint\" && git push 2>&1)",
+      "Bash(git add src/app/api/debug/route.ts && git commit -m \"Update debug endpoint for key diagnosis\" && git push 2>&1)",
+      "Bash(git add src/app/api/debug/route.ts src/lib/sheets.ts && git commit -m \"Normalize private key handling, update debug endpoint\" && git push 2>&1)",
+      "Bash(rm -rf /Users/yotsu/claude/homework/src/app/api/debug && git add -A && git commit -m \"Remove debug endpoint\" && git push 2>&1)"
     ]
   }
 }
