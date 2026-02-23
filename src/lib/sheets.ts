@@ -5,11 +5,19 @@ import { SHEET_NAME, SHEET_RANGE } from "./constants"
 
 const SPREADSHEET_ID = process.env.GOOGLE_SPREADSHEET_ID!
 
+function getPrivateKey(): string {
+  const key = process.env.GOOGLE_PRIVATE_KEY ?? ""
+  return key
+    .replace(/^"/, "")     // 先頭の余分な " を除去
+    .replace(/"$/, "")     // 末尾の余分な " を除去
+    .replace(/\\n/g, "\n") // リテラル \n を実際の改行に変換
+}
+
 function getAuth() {
   return new google.auth.GoogleAuth({
     credentials: {
       client_email: process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL,
-      private_key: process.env.GOOGLE_PRIVATE_KEY?.replace(/\\n/g, "\n"),
+      private_key: getPrivateKey(),
     },
     scopes: ["https://www.googleapis.com/auth/spreadsheets"],
   })
